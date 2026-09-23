@@ -1,0 +1,42 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(245, 245, 245);
+  line-height: 1.6;  /* Better spacing between lines */
+}
+
+h1 {
+  color: #1a73e8;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;  /* Center the heading */
+  margin-bottom: 20px;
+}
+
+p {
+  color: #202124;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.highlight {
+  background-color: #fff3cd;
+  color: #856404;
+  font-weight: bold;
+  padding: 10px;  /* Add space inside */
+  border-left: 4px solid #ffc107;  /* Yellow accent border */
+}
+
+#footer {
+  background-color: #202124;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 40px;
+  border-top: 1px solid #555;
+}
+a {
+  color: #1a73e8;
+  text-decoration: none;
+}

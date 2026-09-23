@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding and viewport for responsive design -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Task</title>
+  <!-- The block below is CSS. It only draws borders on tables so you can
+       see rows and cells. CSS is Lesson 05 - leave this alone for now. -->
+  <style>
+    table, th, td { border: 1px solid #333; border-collapse: collapse; }
+    th, td { padding: 6px; }
+  </style>
+</head>
+<body>
+<table>
+    <caption>Student Grades</caption>
+    <tr>
+    <th>Name</th>
+    <th>Math</th>
+    <th>English</th>
+    <th>science</th>
+    </tr>
+    <tr>
+    <td>Alice</td>
+    <td>95</td>
+    <td>87</td>
+    <td>92</td>
+</tr>
+<tr>
+    <td>bob</td>
+    <td>88</td>
+    <td>91</td>
+    <td>85</td>
+</tr>
+<tr>
+    <td>carol</td>
+    <td>92</td>
+    <td>94</td>
+    <td>89</td>
+</tr>
+</table>
+<table>
+    <caption>Quarterly Sales by Region</caption>
+    <tr>
+        <th>region</th>
+        <th>q1</th>
+        <th>q2</th>
+        <th>q3</th>
+    </tr>
+    <tr>
+        <td>east</td>
+        <td>$50,000</td>
+        <td>$55,000</td>
+        <td>$60,000</td>
+    </tr>
+    <tr>
+        <td>west</td>
+        <td>$45,000</td>
+        <td>$48,000</td>
+        <td>$52,000</td>
+    </tr>
+    <tr>
+        <td colspan="4">All amounts are in US dollars</td>
+    </tr>
+</table>
+<table>
+    <caption>Product Inventory</caption>
+    <tr>
+    <th>product</th>
+    <th>location</th>
+    <th>quantity</th>
+    </tr>
+    <tr>
+        <td rowspan=2>laptop</td>
+        <td>warehouse A</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td>warehouse B</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>monitor</td>
+        <td>warehouse C</td>
+        <td>20</td>
+    </tr>
+</table>
