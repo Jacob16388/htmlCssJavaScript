@@ -3,57 +3,282 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Box Model Practice</title>
+  <title>CSS Box Model Masterclass</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;                  /* remove the browser's default space around the page */
-      background-color: #eeeeee;
-    }
     * {
-        box-sizing: border-box;
-    }
-    /* Add each new rule below this line */
-    .card {
-        width: 300px;
-        background-color: #eeeeee;
-        padding: 1rem 2rem;
-        border: 2px solid rgb(21, 101, 192);
-        border-radius: 8px;
-        margin: 1rem;
-    }
-    .card h2 {
-        margin-top: 0;
-    }
-    main {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 1rem;
-    }
-    * {
-        outline: 1px solid red;
+      box-sizing: border-box;
     }
 
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f6f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #0d2a4a;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: white;
+      color: #0d2a4a;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      background-color: #0d47a1;
+      color: white;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .hero {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      border-left: 6px solid #0d47a1;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .hero h2 {
+      margin-top: 0;
+      color: #0d2a4a;
+    }
+
+    .section-title {
+      color: #0d2a4a;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #0d47a1;
+      padding-bottom: 0.3rem;
+    }
+
+    .cards-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      flex: 1 1 calc(50% - 1.5rem);
+      min-width: 280px;
+      background-color: white;
+      border: 2px solid #1565c0;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #0d2a4a;
+    }
+
+    .box-diagram {
+      background-color: #bbdefb;
+      border: 3px solid #1565c0;
+      padding: 1rem;
+      margin: 1rem 0;
+      text-align: center;
+      font-weight: bold;
+      color: #0d2a4a;
+      border-radius: 4px;
+    }
+
+    .box-diagram-inner {
+      background-color: #ffffff;
+      border: 2px dashed #0d47a1;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    code {
+      background-color: #e0e0e0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background-color: #272822;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #0d2a4a;
+      color: white;
+      margin-top: 3rem;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Box Model Practice</h1>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="#content">Content</a>
+      <a href="#padding">Padding</a>
+      <a href="#border">Border</a>
+      <a href="#margin">Margin</a>
+      <a href="#box-sizing">Box Sizing</a>
     </nav>
   </header>
+
   <main>
-    <div class="card">
-      <h2>Card One</h2>
-      <p>A card is a box with a heading and some text.</p>
+    <section class="hero">
+      <h2>Welcome to the CSS Box Model Playground</h2>
+      <p>Scroll down to explore all four parts of the box model: <strong>Content</strong>, <strong>Padding</strong>, <strong>Border</strong>, and <strong>Margin</strong>. Observe how sticky positioning keeps the navigation visible at the top as you navigate through the guide.</p>
+    </section>
+
+    <!-- Section 1 -->
+    <h2 class="section-title" id="content">1. The Content Layer</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>What is Content?</h3>
+        <p>The content area contains the actual elements like text, images, videos, or child HTML nodes. Its size is controlled using the <code>width</code> and <code>height</code> properties.</p>
+      </div>
+      <div class="card">
+        <h3>Content Example</h3>
+        <p>Without padding or borders, your text directly touches the edge of the box boundary:</p>
+        <div style="background-color: #ffe0b2; border: 1px solid #f57c00;">
+          Raw Content Box (No padding)
+        </div>
+      </div>
     </div>
-    <div class="card">
-      <h2>Card Two</h2>
-      <p>We will use cards to learn padding, border, and margin.</p>
+
+    <!-- Section 2 -->
+    <h2 class="section-title" id="padding">2. The Padding Layer</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Understanding Padding</h3>
+        <p>Padding creates breathing room <em>inside</em> the element between the content and its border. It inherits the background color of the element.</p>
+        <div class="box-diagram">
+          PADDING AREA
+          <div class="box-diagram-inner">Inner Content</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Padding Shorthand</h3>
+        <p>Set padding for all sides at once or individually:</p>
+        <pre><code>/* Top Right Bottom Left */
+padding: 10px 20px 10px 20px;
+
+/* Top/Bottom Left/Right */
+padding: 1rem 2rem;</code></pre>
+      </div>
     </div>
+
+    <!-- Section 3 -->
+    <h2 class="section-title" id="border">3. The Border Layer</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Border Properties</h3>
+        <p>The border sits between the padding and margin. You define three main qualities: <code>width</code>, <code>style</code>, and <code>color</code>.</p>
+      </div>
+      <div class="card">
+        <h3>Popular Border Styles</h3>
+        <p style="border: 2px solid #0d47a1; padding: 0.5rem; margin-bottom: 0.5rem;">Solid Border</p>
+        <p style="border: 2px dashed #0d47a1; padding: 0.5rem; margin-bottom: 0.5rem;">Dashed Border</p>
+        <p style="border: 2px dotted #0d47a1; padding: 0.5rem;">Dotted Border</p>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <h2 class="section-title" id="margin">4. The Margin Layer</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Outer Spacing</h3>
+        <p>Margin pushes other surrounding elements away. It is completely transparent and sits outside the border.</p>
+      </div>
+      <div class="card">
+        <h3>Centering with Margin</h3>
+        <p>Use <code>margin: 0 auto;</code> combined with a fixed or max-width to center block elements on a page easily.</p>
+        <pre><code>.container {
+  max-width: 800px;
+  margin: 0 auto;
+}</code></pre>
+      </div>
+    </div>
+
+    <!-- Section 5 -->
+    <h2 class="section-title" id="box-sizing">5. Box-Sizing: content-box vs. border-box</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>content-box (Default)</h3>
+        <p>Adds padding and border to the specified width. A 200px box with 20px padding and 5px border becomes <strong>250px wide</strong>.</p>
+      </div>
+      <div class="card">
+        <h3>border-box (Recommended)</h3>
+        <p>Includes padding and border within the calculated width. A 200px box stays <strong>200px wide</strong> regardless of padding.</p>
+        <pre><code>* {
+  box-sizing: border-box;
+}</code></pre>
+      </div>
+    </div>
+
+    <!-- Section 6 -->
+    <h2 class="section-title">6. Common Layout Exercises</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Exercise A: Card Alignment</h3>
+        <p>Practice adjusting <code>display: flex</code> gaps and padding settings to keep cards neatly arranged across viewports.</p>
+      </div>
+      <div class="card">
+        <h3>Exercise B: Sticky Nav Bar</h3>
+        <p>Observe how the top header uses <code>position: sticky; top: 0;</code> to stay fixed at the viewport top during long scrolling sessions.</p>
+      </div>
+    </div>
+
   </main>
+
+  <footer>
+    <p>CSS Box Model Practice Page &bull; Scroll Back To Top &uarr;</p>
+  </footer>
+
 </body>
 </html>
