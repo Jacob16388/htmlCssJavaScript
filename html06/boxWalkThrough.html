@@ -5,8 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Box Model Masterclass</title>
   <style>
+    .to-top {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background-color: #1565c0;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      text-decoration: none;
+      border-radius: 2px;
+    }
     * {
       box-sizing: border-box;
+    }
+    .has-badge {
+      position: relative;
+    }
+    .badge {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background-color: #fbff00;
+      color: black;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
     }
 
     body {
@@ -227,6 +249,11 @@ padding: 1rem 2rem;</code></pre>
         <p style="border: 2px dotted #0d47a1; padding: 0.5rem;">Dotted Border</p>
       </div>
     </div>
+    <div class="card has-badge">
+  <span class="badge">NEW</span>
+  <h2>Card Three</h2>
+  <p>This card has a badge.</p>
+</div>
 
     <!-- Section 4 -->
     <h2 class="section-title" id="margin">4. The Margin Layer</h2>
@@ -279,6 +306,6 @@ padding: 1rem 2rem;</code></pre>
   <footer>
     <p>CSS Box Model Practice Page &bull; Scroll Back To Top &uarr;</p>
   </footer>
-
+<a href="#" class="to-top">back to top</a>
 </body>
 </html>
