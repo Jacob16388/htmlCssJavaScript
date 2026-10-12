@@ -1,25 +1,21 @@
 # Client meeting-Jacob
 
-## Reasearch
-from source 1 I learned to ask about the buisness and the items. from soruce 2 I learned to ask about deadlines and competitors
-from source 3 I learned to ask about goals.
-
 ## Client Questions
-- can you describe your buisness 1
-- what do you sell 1
-- can you list some features of your items 1
-- can you list any links you would want to have on your website 3
-- by what time would you like this to be finished 6
-- do you have a current website if so what do you not like about it and what do you like about it 4
-- can you list atleast 3 competitors 5
-- what goals do you have with your website 2
-- why do you need a website 3
-- how is your website useful 2
-- what audience is your target 2
-- what is your scope for this project 6
-- how much money do you plan to spend on this 6 
-- what featues would you like to have 5
-- how much traffic are you planning to have 2
+- can you describe your buisness 
+- what do you sell 
+- can you list some features of your items 
+- can you list any links you would want to have on your website 
+- by what time would you like this to be finished 
+- do you have a current website if so what do you not like about it and what do you like about it 
+- can you list atleast 3 competitors 
+- what goals do you have with your website 
+- why do you need a website 
+- how is your website useful 
+- what audience is your target 
+- what is your scope for this project 
+- how much money do you plan to spend on this 
+- what featues would you like to have 
+- how much traffic are you planning to have 
 
 ## Client Intake Form
 ### About Your Business
@@ -91,10 +87,3 @@ Answer: ____________________
 **17. how much traffic are you planning to have**
 
 Answer: ____________________
-
-### links
-[source 1](https://uxplanet.org/10-questions-you-need-to-ask-your-web-design-client-5b057acedf72)
-
-[source 2](https://www.godaddy.com/resources/uk/smallbusiness/why-a-discovery-session-is-crucial-for-web-designers-developers)
-
-[source 3](https://activecollab.com/blog/marketing/18-key-questions-to-ask-your-web-design-client)
