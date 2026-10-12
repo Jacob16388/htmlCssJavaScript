@@ -1,0 +1,78 @@
+/* X-RAY: shows every box while I work. Remove before turning in. */
+* { outline: 1px solid red; }
+
+/* Width and height include padding and border */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* keep your Lesson 05 font and color lines here */
+}
+
+main {
+  max-width: 60rem;
+  margin: 0 auto;      /* auto left and right = centered */
+  padding: 2rem;
+}
+
+header, footer {
+  padding: 1rem 2rem;  /* 1rem top/bottom, 2rem left/right */
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+th, td {
+  padding: 0.5rem 1rem;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  color: black;
+  /* pick a background-color and color that match your site */
+}
+
+/* Only while the mouse is on the link */
+nav a:hover {
+  /* change the background-color (and/or color) so it clearly changes */
+  background-color: black;
+}
+
+header {
+  position: sticky;
+  top: 0;              /* stick at the top edge */
+  z-index: 10;         /* stay above the content under it */
+  /* your header MUST have a background-color, or content shows through */
+  background-color: white;
+}
+
+figure {
+  display: inline-block;     /* side by side */
+  vertical-align: top;       /* line up the tops */
+  width: 18rem;
+  padding: 1rem;             /* space inside the card */
+  margin: 1rem;              /* space between cards */
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* Keep each photo inside its card */
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* A hover effect on the cards */
+figure:hover {
+  /* change the border-color or background-color */
+  background-color: black;
+}
+
