@@ -71,7 +71,11 @@
        - color: white
        - padding: 1rem 2rem */
     header {
-
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: #1565c0;
+      color: white;
     }
 
     /* TODO 3: Make the nav links look like buttons.
@@ -83,7 +87,13 @@
        - text-decoration: none
        - border-radius: 4px */
     nav a {
-
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin-right: 0.5rem;
+      background-color: #0d47a1;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
     }
 
     /* ===== MAIN AREA ===== */
@@ -93,7 +103,9 @@
        - margin: 0 auto   (auto left and right = centered)
        - padding: 2rem */
     main {
-
+      max-width: 60rem;
+      margin: 0 auto;
+      padding: 2rem;
     }
 
     /* TODO 5: Style the intro card.
@@ -105,7 +117,13 @@
        - border-radius: 8px
        - position: relative   (so the badge in TODO 6 is placed inside this card) */
     .intro {
-
+      width: 30rem;
+      padding: 1.5rem;
+      border: 2px solid #333333;
+      margin: o auto 2rem auto;
+      background-color: white;
+      border-radius: 8px;
+      position: relative;
     }
 
     /* TODO 6: Add the NEW badge.
@@ -120,19 +138,29 @@
        - border-radius: 4px
        - font-size: 0.75rem */
     .badge {
-
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background-color:#ff9800 ;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
     }
 
     /* ===== THREE SPACING BOXES ===== */
 
     /* TODO 7: Shared styles for all three boxes.
-       - display: inline-block   (side by side)
+    /* TODO 7: Shared styles for all three boxes.
        - vertical-align: top
        - width: 14rem
        - background-color: white
        - text-align: left */
     .box-1, .box-2, .box-3 {
-
+      vertical-align: top;
+      width: 14rem;
+      background-color: white;
+      text-align: left;
     }
 
     /* TODO 8: Give each box different spacing:
@@ -142,18 +170,24 @@
        Question: why are all three boxes the same width even though their
        padding and border are different? Answer in the comment below. */
     .box-1 {
-
+      padding: 0.5rem;
+      margin: 0.25rem;
+      border: 1px solid #1976d2;
     }
 
     .box-2 {
-
+      padding: 1rem;
+      margin: 0.5rem;
+      border: 2px solid #f57c00;
     }
 
     .box-3 {
-
+      padding: 2rem;
+      margin: 1rem;
+      border: 3px solid #7b1fa2;
     }
 
-    /* Answer to the TODO 8 question: */
+    /* Answer to the TODO 8 question: *we put the max width up in the code earlier so everything will have the same width no matter what you change/
 
 
     /* ===== QUICK LINKS ===== */
@@ -165,11 +199,18 @@
                 color: #1565c0, text-decoration: none,
                 border-bottom: 1px solid #eeeeee */
     aside {
-
+      background-color: white;
+      padding: 1rem 1.5rem;
+      margin-top: 2rem;
+      border-left: 4px solid #1565c0;
     }
 
     aside a {
-
+      display: block;
+      padding: 0.5rem 0;
+      color: #1565c0;
+      text-decoration: none;
+      border-bottom: 1px solid #eeeeee;
     }
 
     /* ===== HOVER EFFECTS ===== */
@@ -179,13 +220,34 @@
        - the three boxes    background-color: #fff3e0
        - aside a:hover      padding-left: 0.5rem and font-weight: bold */
 
+    nav a:hover {
+      background-color: #ff9800;
+    }
 
+    .box-1:hover {
+      background-color: #fff3e0;
+    }
+
+    .box-2:hover {
+      background-color: #fff3e0;
+    }
+
+    .box-3:hover {
+      background-color: #fff3e0;
+    }
+
+    aside a:hover {
+      padding-left: 0.5rem;
+      font-weight: bold;
+    }
     /* ===== HIDE AND FIXED ===== */
 
     /* TODO 11: Hide the extra paragraph.
        CSS: a .hidden rule with display: none
        HTML: add class="hidden" to the paragraph that says it should be hidden. */
-
+    .hidden {
+      display: none;
+    }
 
     /* TODO 12: Make a "Back to top" link that stays in the corner while scrolling.
        HTML: add <a href="#top" class="to-top">Back to top</a> right above </body>
@@ -199,7 +261,14 @@
        - text-decoration: none
        - border-radius: 4px */
     .to-top {
-
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background-color: #1565c0;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 4px;
     }
   </style>
 </head>
@@ -218,7 +287,7 @@
     <section class="intro" id="intro">
       <h2>What Is the Box Model?</h2>
       <p>Every element is a box with four layers: content, padding, border, and margin. Padding is space inside the border. Margin is space outside the border.</p>
-      <p>This paragraph should be hidden when you are done.</p>
+      <p class="hidden">This paragraph should be hidden when you are done.</p>
     </section>
 
     <!-- Three boxes with different spacing -->
@@ -265,6 +334,6 @@
   <footer>
     <p>&copy; 2026 Medina County Career Center</p>
   </footer>
-
+<a href="#top" class="to-top">Back to top</a>
 </body>
 </html>
