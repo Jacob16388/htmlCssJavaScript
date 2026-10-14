@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Viewport tag: explained in Step 11 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>html07 Walkthrough</title>
+  <title>html07 Flexbox</title>
   <style>
     * { box-sizing: border-box; }
 
@@ -20,17 +19,62 @@
       padding: 1rem;
     }
 
-    /* Your walkthrough CSS goes below this line */
+    /* ===== Your CSS goes below this line ===== */
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        align-items: center;
+        background-color: #2c3e50;
+    }
+
+    .logo {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+    }
 
     .cards {
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
+        gap: 1.5rem;
     }
+
+    .card {
+        flex: 1;
+        padding: 1.5rem;
+        border: 2px solid #2c3e50;
+        border-radius: 8px;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .gallery img {
+        flex: 1;
+        min-width: 12rem;
+    }
+
 
   </style>
 </head>
 <body>
-  <!-- Nav bar: two flex items (the logo and the links group) -->
+  <!-- Nav bar: two items (the logo and the links group) -->
   <nav class="navbar">
     <div class="logo">My Site</div>
     <div class="nav-links">
@@ -44,14 +88,14 @@
   <main>
     <h1>Flexbox Practice</h1>
 
-    <!-- Three cards: will sit in a row -->
+    <!-- Three cards -->
     <div class="cards">
       <div class="card"><h2>Fast</h2><p>Loads quickly on any device.</p></div>
       <div class="card"><h2>Clean</h2><p>Easy to read and easy to use.</p></div>
       <div class="card"><h2>Responsive</h2><p>Works on phones, tablets, and desktops.</p></div>
     </div>
 
-    <!-- Six photos: will wrap onto more than one row -->
+    <!-- Six photos -->
     <div class="gallery">
       <img src="images/photo-1.png" alt="Sample photo 1">
       <img src="images/photo-2.png" alt="Sample photo 2">
