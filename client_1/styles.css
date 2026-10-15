@@ -1,0 +1,154 @@
+/* 1. Global Box Sizing & Body Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Stops horizontal scrolling and overflowing elements */
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+/* 2. Responsive Header & Banner Fixes */
+header {
+    text-align: center;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.header-banner {
+    width: 100%;
+    max-width: 1200px; /* Limits size on large monitors so the image doesn't stretch and pixelate */
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #f4f8f6;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto; /* Maintains natural resolution ratio without stretching vertically */
+    max-height: 250px;
+    object-fit: contain; /* Prevents the image from getting blurry or cropped */
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin: 20px 10px 10px;
+}
+
+/* 3. Flexible Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2e7d32;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover {
+    background-color: #e8f5e9;
+}
+
+/* 4. Main Container */
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+/* 5. Responsive Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* 6. Responsive Survey Buttons */
+.survey-section {
+    background-color: #f4f8f6;
+    padding: 25px 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.survey-options {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.survey-btn {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    flex: 1 1 120px;
+    max-width: 200px;
+}
+
+.survey-btn:hover {
+    background-color: #1b5e20;
+}
+
+/* 7. Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e8f5e9;
+    margin-top: 40px;
+}
+
+/* 8. Media Query for Small Mobile Devices */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .survey-btn {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+}

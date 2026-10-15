@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking & Services - Home Harmony</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-banner">
+            <a href="index.html">
+                <img src="images/Home.png" alt="Home Harmony Banner" class="logo-img">
+            </a>
+        </div>
+        <h1>Home Harmony</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="booking.html">Booking & Services</a>
+        </nav>
+    </header>
+    <main>
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>We do more than just cleaning—we provide custom assistance tailored to your family's unique household needs.</p>
+            <ul>
+                <li>Household Chores & Cleaning</li>
+                <li>Organization & Tidying</li>
+                <li>Custom Family Tasks</li>
+            </ul>
+        </section>
+
+        <section id="booking-form">
+            <h2>Book a Service</h2>
+            <form>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="service-type">What do you need help with?</label><br>
+                <textarea id="service-type" name="service-type" rows="4" cols="50" placeholder="Tell us about the household tasks you need help with..."></textarea><br><br>
+
+                <button type="submit" class="survey-btn">Submit Request</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Home Harmony. All rights reserved.</p>
+    </footer>
+</body>
+</html>
