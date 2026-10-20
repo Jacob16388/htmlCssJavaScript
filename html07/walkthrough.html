@@ -71,9 +71,45 @@
 
     /* ===== MARKER A: new rules go here (Steps 3 and 6) ===== */
 
+  img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
+    .page-layout {
+      display: grid;
+      grid-template-columns: 15rem 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .page-layout aside,
+    .page-layout section {
+      background-color: #fff;
+      border: 2px solid #2c3e50;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .page-layout aside {
+      background-color: #dfe6ec;
+    }
     /* ===== MARKER B: media query goes here (Steps 4 and 7) ===== */
+ @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
 
+      .cards {
+        flex-direction: column;
+      }
+
+      .page-layout {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>

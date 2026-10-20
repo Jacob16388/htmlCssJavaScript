@@ -12,12 +12,11 @@
 
     <!-- Header Section -->
     <header class="w-full bg-white text-center shadow-sm">
-        <!-- Banner with centered logo -->
+        <!-- Banner with centered logo above title -->
         <div class="header-banner">
             <a href="#home">
-                <!-- Fallback SVG embedded inside img onerror if local file is missing -->
                 <img 
-                    src="images/Home.png" 
+                    src="images/unnamed.png" 
                     alt="Home Harmony Logo" 
                     class="logo-img"
                     onerror="this.onerror=null; this.src='https://placehold.co/400x180/f4f8f6/1b5e20?text=HOME+HARMONY';"
@@ -27,7 +26,7 @@
 
         <h1 class="text-3xl sm:text-4xl font-bold text-[#1b5e20] my-4 tracking-tight">Home Harmony</h1>
 
-        <!-- Simplified & Streamlined Navigation (Essential Links Only: Home, Services, Contact) -->
+        <!-- Simplified & Streamlined Navigation -->
         <nav class="bg-[#e8f5e9] p-3 max-w-4xl mx-auto rounded-xl my-3 flex justify-center gap-3 sm:gap-6 flex-wrap">
             <a href="#home" class="nav-btn active" onclick="setActiveNav(this)">Home</a>
             <a href="#services" class="nav-btn" onclick="setActiveNav(this)">Services</a>
@@ -44,34 +43,6 @@
             <p class="text-gray-700 text-lg leading-relaxed">
                 Helping families one chore at a time. At <strong class="text-[#1b5e20]">Home Harmony</strong>, our mission is to bring balance, order, and ease back into your daily home lifestyle so you can focus on what matters most.
             </p>
-        </section>
-
-        <!-- Interactive Question / Survey Section -->
-        <section id="survey-section" class="bg-[#e8f5e9] p-6 sm:p-8 rounded-2xl text-center shadow-sm border border-[#c8e6c9]">
-            <h2 class="text-xl sm:text-2xl font-bold text-[#1b5e20] mb-2">
-                How often do you find yourself overwhelmed with household tasks?
-            </h2>
-            <p class="text-sm text-gray-600 mb-6">Select an option below and submit your answer.</p>
-            
-            <div class="survey-options flex flex-wrap justify-center gap-3">
-                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Never</button>
-                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Rarely</button>
-                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Sometimes</button>
-                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Often</button>
-                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Always</button>
-            </div>
-
-            <!-- Submit Survey Answer Button -->
-            <div class="mt-6">
-                <button id="submit-survey-btn" type="button" onclick="submitSurveyAnswer()" class="btn-submit text-base opacity-50 cursor-not-allowed" disabled>
-                    Submit Answer
-                </button>
-            </div>
-
-            <!-- Feedback Message Box -->
-            <div id="survey-feedback" class="hidden mt-4 p-3 bg-white text-[#1b5e20] font-semibold rounded-lg shadow-inner max-w-md mx-auto border border-[#a5d6a7]">
-                Thanks for sharing! Your answer has been locked.
-            </div>
         </section>
 
         <!-- Services Section -->
@@ -96,6 +67,34 @@
                     <h3 class="font-bold text-[#1b5e20] mb-1">Custom Tasks</h3>
                     <p class="text-xs text-gray-600">Tailored help for specific household requests.</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- Interactive Question / Survey Section (Moved below Our Services) -->
+        <section id="survey-section" class="bg-[#e8f5e9] p-6 sm:p-8 rounded-2xl text-center shadow-sm border border-[#c8e6c9]">
+            <h2 class="text-xl sm:text-2xl font-bold text-[#1b5e20] mb-2">
+                How often do you find yourself overwhelmed with household tasks?
+            </h2>
+            <p class="text-sm text-gray-600 mb-6">Select an option below and submit your answer.</p>
+            
+            <div class="survey-options flex flex-wrap justify-center gap-3">
+                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Never</button>
+                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Rarely</button>
+                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Sometimes</button>
+                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Often</button>
+                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Always</button>
+            </div>
+
+            <!-- Submit Survey Answer Button -->
+            <div class="mt-6">
+                <button id="submit-survey-btn" type="button" onclick="submitSurveyAnswer()" class="btn-submit text-base opacity-50 cursor-not-allowed" disabled>
+                    Submit Answer
+                </button>
+            </div>
+
+            <!-- Feedback Message Box -->
+            <div id="survey-feedback" class="hidden mt-4 p-3 bg-white text-[#1b5e20] font-semibold rounded-lg shadow-inner max-w-md mx-auto border border-[#a5d6a7]">
+                Thanks for sharing! We can help take that burden off your shoulders.
             </div>
         </section>
 
