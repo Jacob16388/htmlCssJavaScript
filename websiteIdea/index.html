@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Harmony - Simplified & Clean</title>
+    <!-- Tailwind CSS CDN for smooth layout utilities -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="w-full bg-white text-center shadow-sm">
+        <!-- Banner with centered logo -->
+        <div class="header-banner">
+            <a href="#home">
+                <!-- Fallback SVG embedded inside img onerror if local file is missing -->
+                <img 
+                    src="images/Home.png" 
+                    alt="Home Harmony Logo" 
+                    class="logo-img"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x180/f4f8f6/1b5e20?text=HOME+HARMONY';"
+                >
+            </a>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-bold text-[#1b5e20] my-4 tracking-tight">Home Harmony</h1>
+
+        <!-- Simplified & Streamlined Navigation (Essential Links Only: Home, Services, Contact) -->
+        <nav class="bg-[#e8f5e9] p-3 max-w-4xl mx-auto rounded-xl my-3 flex justify-center gap-3 sm:gap-6 flex-wrap">
+            <a href="#home" class="nav-btn active" onclick="setActiveNav(this)">Home</a>
+            <a href="#services" class="nav-btn" onclick="setActiveNav(this)">Services</a>
+            <a href="#contact" class="nav-btn" onclick="setActiveNav(this)">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-4xl w-full mx-auto px-4 py-8 flex-grow space-y-8">
+
+        <!-- Home & About Section -->
+        <section id="home" class="content-card p-6 sm:p-8">
+            <h2 class="text-2xl font-bold text-[#1b5e20] mb-3">About Us</h2>
+            <p class="text-gray-700 text-lg leading-relaxed">
+                Helping families one chore at a time. At <strong class="text-[#1b5e20]">Home Harmony</strong>, our mission is to bring balance, order, and ease back into your daily home lifestyle so you can focus on what matters most.
+            </p>
+        </section>
+
+        <!-- Interactive Question / Survey Section -->
+        <section id="survey-section" class="bg-[#e8f5e9] p-6 sm:p-8 rounded-2xl text-center shadow-sm border border-[#c8e6c9]">
+            <h2 class="text-xl sm:text-2xl font-bold text-[#1b5e20] mb-2">
+                How often do you find yourself overwhelmed with household tasks?
+            </h2>
+            <p class="text-sm text-gray-600 mb-6">Select an option below and submit your answer.</p>
+            
+            <div class="survey-options flex flex-wrap justify-center gap-3">
+                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Never</button>
+                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Rarely</button>
+                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Sometimes</button>
+                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Often</button>
+                <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Always</button>
+            </div>
+
+            <!-- Submit Survey Answer Button -->
+            <div class="mt-6">
+                <button id="submit-survey-btn" type="button" onclick="submitSurveyAnswer()" class="btn-submit text-base opacity-50 cursor-not-allowed" disabled>
+                    Submit Answer
+                </button>
+            </div>
+
+            <!-- Feedback Message Box -->
+            <div id="survey-feedback" class="hidden mt-4 p-3 bg-white text-[#1b5e20] font-semibold rounded-lg shadow-inner max-w-md mx-auto border border-[#a5d6a7]">
+                Thanks for sharing! Your answer has been locked.
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="content-card p-6 sm:p-8">
+            <h2 class="text-2xl font-bold text-[#1b5e20] mb-3">Our Services</h2>
+            <p class="text-gray-700 mb-4">
+                We do more than just standard cleaning—we provide customized assistance tailored specifically to your family's unique household routine.
+            </p>
+            <div class="grid sm:grid-cols-3 gap-4 mt-6">
+                <div class="p-4 bg-[#f4f8f6] rounded-lg text-center border border-[#e0e0e0]">
+                    <div class="text-2xl mb-2">🧹</div>
+                    <h3 class="font-bold text-[#1b5e20] mb-1">Chores & Cleaning</h3>
+                    <p class="text-xs text-gray-600">Deep cleaning and daily chore maintenance.</p>
+                </div>
+                <div class="p-4 bg-[#f4f8f6] rounded-lg text-center border border-[#e0e0e0]">
+                    <div class="text-2xl mb-2">📦</div>
+                    <h3 class="font-bold text-[#1b5e20] mb-1">Organization</h3>
+                    <p class="text-xs text-gray-600">Decluttering rooms, closets, and common areas.</p>
+                </div>
+                <div class="p-4 bg-[#f4f8f6] rounded-lg text-center border border-[#e0e0e0]">
+                    <div class="text-2xl mb-2">📋</div>
+                    <h3 class="font-bold text-[#1b5e20] mb-1">Custom Tasks</h3>
+                    <p class="text-xs text-gray-600">Tailored help for specific household requests.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Booking Section -->
+        <section id="contact" class="content-card p-6 sm:p-8">
+            <h2 class="text-2xl font-bold text-[#1b5e20] mb-2">Book a Service / Contact Us</h2>
+            <p class="text-gray-600 mb-6 text-sm">Fill out the form below to request a personalized consultation.</p>
+
+            <form id="booking-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label for="name" class="block font-semibold text-gray-700 mb-1">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Jane Doe" class="form-input">
+                </div>
+
+                <div>
+                    <label for="email" class="block font-semibold text-gray-700 mb-1">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="jane@example.com" class="form-input">
+                </div>
+
+                <div>
+                    <label for="service-type" class="block font-semibold text-gray-700 mb-1">How can we assist you?</label>
+                    <textarea id="service-type" name="service-type" rows="4" required placeholder="Describe the household tasks you need help with..." class="form-input"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit w-full sm:w-auto text-base">
+                    Submit Request
+                </button>
+            </form>
+
+            <!-- Form Confirmation Box -->
+            <div id="form-success-msg" class="hidden mt-4 p-4 bg-[#e8f5e9] text-[#1b5e20] font-medium rounded-lg border border-[#a5d6a7]">
+                ✅ Your request has been submitted successfully! We will get back to you shortly.
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#1b5e20] text-white text-center py-6 mt-12">
+        <p class="text-sm">&copy; Home Harmony. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

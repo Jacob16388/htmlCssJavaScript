@@ -1,115 +1,123 @@
-/* 1. Global Box Sizing & Body Reset */
+/* Global Reset & Styling */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-html, body {
+body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    overflow-x: hidden; /* Stops horizontal scrolling and overflowing elements */
     font-family: Arial, sans-serif;
     color: #333;
-    background-color: #fff;
+    background-color: #f9fdfa;
     line-height: 1.6;
 }
 
-/* 2. Responsive Header & Banner Fixes */
+/* Header & Banner Styling */
 header {
-    text-align: center;
-    padding-bottom: 20px;
     width: 100%;
+    background-color: #ffffff;
+    border-bottom: 2px solid #e0e0e0;
+    text-align: center;
 }
 
 .header-banner {
     width: 100%;
-    max-width: 1200px; /* Limits size on large monitors so the image doesn't stretch and pixelate */
-    margin: 0 auto;
-    overflow: hidden;
     background-color: #f4f8f6;
+    padding: 20px 0; /* Provides spacing around the balanced logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-banner a {
+    display: inline-block;
 }
 
 .logo-img {
-    width: 100%;
-    height: auto; /* Maintains natural resolution ratio without stretching vertically */
-    max-height: 250px;
-    object-fit: contain; /* Prevents the image from getting blurry or cropped */
+    width: auto;
+    max-width: 85%;
+    height: 180px; /* Increased height for better visibility */
+    object-fit: contain; /* Keeps image crisp without distortion */
     display: block;
     margin: 0 auto;
 }
 
-h1 {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    margin: 20px 10px 10px;
+.site-title {
+    font-size: 2.2rem;
+    color: #1b5e20;
+    margin: 15px 0;
+    font-weight: 700;
 }
 
-/* 3. Flexible Navigation */
-nav {
+/* Navigation Bar */
+.nav-bar {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
-    padding: 10px 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #2e7d32;
-    font-weight: bold;
-    font-size: 1.1rem;
-    padding: 6px 12px;
-    border-radius: 4px;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-nav a:hover {
+    padding: 10px;
     background-color: #e8f5e9;
-}
-
-/* 4. Main Container */
-main {
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px 0;
-}
-
-section {
-    margin-bottom: 30px;
-}
-
-/* 5. Responsive Form Elements */
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
     border-radius: 6px;
-    font-size: 1rem;
+    max-width: 900px;
+    margin: 0 auto 15px;
 }
 
-/* 6. Responsive Survey Buttons */
+.nav-btn {
+    text-decoration: none;
+    color: #1b5e20;
+    background-color: #ffffff;
+    padding: 8px 18px;
+    border: 1px solid #2e7d32;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-btn:hover {
+    background-color: #2e7d32;
+    color: #ffffff;
+}
+
+/* Main Content Styling */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.content-section {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border-left: 5px solid #2e7d32;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.content-section h2 {
+    margin-top: 0;
+    color: #2e7d32;
+}
+
+/* Interactive Survey Section */
 .survey-section {
-    background-color: #f4f8f6;
-    padding: 25px 15px;
+    background-color: #e8f5e9;
+    padding: 25px 20px;
     border-radius: 8px;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.survey-section h2 {
+    color: #1b5e20;
+    margin-top: 0;
+    font-size: 1.3rem;
 }
 
 .survey-options {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 15px;
@@ -117,38 +125,44 @@ textarea {
 
 .survey-btn {
     background-color: #2e7d32;
-    color: white;
+    color: #ffffff;
     border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
+    padding: 10px 16px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    font-weight: bold;
     transition: background-color 0.2s;
-    flex: 1 1 120px;
-    max-width: 200px;
+    flex: 1 1 100px;
+    max-width: 150px;
 }
 
 .survey-btn:hover {
     background-color: #1b5e20;
 }
 
-/* 7. Footer */
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #e8f5e9;
+    background-color: #1b5e20;
+    color: white;
     margin-top: 40px;
 }
 
-/* 8. Media Query for Small Mobile Devices */
+/* Responsive Adjustments for Mobile */
 @media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-        gap: 10px;
+    .logo-img {
+        height: 130px; /* Scales down gracefully on mobile screens */
     }
 
-    .survey-btn {
-        max-width: 100%;
-        flex: 1 1 100%;
+    .nav-bar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+    }
+
+    .nav-btn {
+        text-align: center;
     }
 }

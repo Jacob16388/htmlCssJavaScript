@@ -10,26 +10,32 @@
     <header>
         <div class="header-banner">
             <a href="index.html">
-                <img src="images/Home.png" alt="Home Harmony Banner" class="logo-img">
+                <img src="images/Home.png" alt="Home Harmony Logo" class="logo-img">
             </a>
         </div>
-        <h1>Home Harmony</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="booking.html">Booking & Services</a>
+        <h1 class="site-title">Home Harmony</h1>
+
+        <nav class="nav-bar">
+            <a href="index.html#about" class="nav-btn">About Us</a>
+            <a href="booking.html#services" class="nav-btn">Services</a>
+            <a href="index.html#survey" class="nav-btn">Question</a>
+            <a href="booking.html#booking-form" class="nav-btn">Contact</a>
         </nav>
     </header>
+
     <main>
-        <section>
+        <section id="about" class="content-section">
             <h2>About Us</h2>
             <p>Helping families one chore at a time.</p>
         </section>
-        <section>
+
+        <section class="content-section">
             <h2>Our Mission</h2>
+            <p>Bringing balance and order back to your home lifestyle.</p>
         </section>
 
         <!-- Interactive Question Section -->
-        <section class="survey-section">
+        <section id="survey" class="survey-section">
             <h2>How often do you find yourself overwhelmed with household tasks?</h2>
             <div class="survey-options">
                 <button class="survey-btn" type="button">Never</button>
@@ -40,6 +46,7 @@
             </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; Home Harmony. All rights reserved.</p>
     </footer>
