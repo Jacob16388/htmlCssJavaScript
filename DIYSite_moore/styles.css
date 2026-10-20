@@ -75,3 +75,60 @@ figure:hover {
   background-color: black;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;   /* push the two items to opposite ends */
+  align-items: center;              /* line them up in the middle */
+  padding: 1rem 2rem;
+}
+
+/* The nav links in a row with space between them */
+header nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;   /* extra photos drop to the next row */
+  gap: 1rem;         /* space between photos */
+}
+
+/* Each photo box grows to fill the row but never gets narrower than 15rem */
+.gallery figure {
+  flex: 1;
+  min-width: 15rem;
+  margin: 0;         /* figure has a built-in margin; gap does the spacing now */
+}
+
+img {
+  max-width: 100%;   /* never wider than its box */
+  height: auto;      /* keep the shape (no squishing) */
+  display: block;    /* remove the small gap under the image */
+}
+
+/* Same idea for the promo video on the Home page */
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+
+  /* Header: site name on top, nav underneath */
+  header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Nav links: stack them (or use flex-wrap: wrap if they fit two to a row) */
+  header nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Gallery: one photo per row */
+  .gallery {
+    flex-direction: column;
+  }
+}
