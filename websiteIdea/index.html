@@ -4,44 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Harmony - Simplified & Clean</title>
-    <!-- Tailwind CSS CDN for smooth layout utilities -->
+    <!-- Tailwind CSS CDN for utility classes -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <!-- Header Section -->
-    <header class="w-full bg-white text-center shadow-sm">
-        <!-- Banner with centered logo above title -->
-        <div class="header-banner">
-            <a href="#home">
-                <img 
-                    src="images/unnamed.png" 
-                    alt="Home Harmony Logo" 
-                    class="logo-img"
-                    onerror="this.onerror=null; this.src='https://placehold.co/400x180/f4f8f6/1b5e20?text=HOME+HARMONY';"
-                >
-            </a>
+    <!-- Header Section (Non-sticky, Sleeker Height) -->
+    <header class="w-full">
+        <!-- Top Bar with Logo & Navigation -->
+        <div class="header-top-bar">
+            <div class="max-w-6xl w-full mx-auto px-6 py-2 flex items-center justify-between flex-wrap gap-2">
+                <!-- Logo & Brand Badge -->
+                <a href="#home" class="flex items-center gap-2">
+                    <img 
+                        src="images/unnamed.png" 
+                        alt="Home Harmony Logo" 
+                        class="h-10 sm:h-12 w-auto object-contain"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x80/f4f8f6/1b5e20?text=HOME+HARMONY';"
+                    >
+                    <span class="brand-badge hidden sm:inline-block" title="Verified Home Care"></span>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="top-nav-container">
+                    <a href="#home" class="nav-btn active" onclick="setActiveNav(this)">Home</a>
+                    <a href="#services" class="nav-btn" onclick="setActiveNav(this)">Services</a>
+                    <a href="#contact" class="nav-btn" onclick="setActiveNav(this)">Contact</a>
+                </nav>
+            </div>
         </div>
 
-        <h1 class="text-3xl sm:text-4xl font-bold text-[#1b5e20] my-4 tracking-tight">Home Harmony</h1>
+        <!-- Hero Banner with Compact Height & Floating Glass Badges -->
+        <div class="hero-image-container min-h-[200px] sm:min-h-[240px] flex flex-col justify-between items-center py-6 px-4">
+            
+            <!-- Glassmorphism Badges -->
+            <div class="flex gap-2 flex-wrap justify-center mb-1">
+                <span class="hero-glass-pill text-xs">✨ Professional Care</span>
+                <span class="hero-glass-pill text-xs">🏡 Tailored For Families</span>
+            </div>
 
-        <!-- Simplified & Streamlined Navigation -->
-        <nav class="bg-[#e8f5e9] p-3 max-w-4xl mx-auto rounded-xl my-3 flex justify-center gap-3 sm:gap-6 flex-wrap">
-            <a href="#home" class="nav-btn active" onclick="setActiveNav(this)">Home</a>
-            <a href="#services" class="nav-btn" onclick="setActiveNav(this)">Services</a>
-            <a href="#contact" class="nav-btn" onclick="setActiveNav(this)">Contact</a>
-        </nav>
+            <!-- Hero Headline & Subtitle -->
+            <div class="text-center my-auto">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight drop-shadow-lg">Home Harmony</h1>
+                <p class="text-base sm:text-lg text-white/95 font-medium mt-1.5 drop-shadow max-w-xl mx-auto">
+                    Bringing balance, order, and ease back into your home
+                </p>
+            </div>
+
+            <!-- Subtle Decorative Accent Divider -->
+            <div class="w-12 h-1 bg-[#ffd1dc] rounded-full mt-2 opacity-90"></div>
+        </div>
     </header>
 
     <!-- Main Content Area -->
     <main class="max-w-4xl w-full mx-auto px-4 py-8 flex-grow space-y-8">
 
-        <!-- Home & About Section -->
+        <!-- About Section -->
         <section id="home" class="content-card p-6 sm:p-8">
             <h2 class="text-2xl font-bold text-[#1b5e20] mb-3">About Us</h2>
             <p class="text-gray-700 text-lg leading-relaxed">
-                Helping families one chore at a time. At <strong class="text-[#1b5e20]">Home Harmony</strong>, our mission is to bring balance, order, and ease back into your daily home lifestyle so you can focus on what matters most.
+                Helping families one chore at a time. At <strong class="text-[#1b5e20]">Home Harmony</strong>, our mission is to bring balance, order, and ease back into your daily household lifestyle so you can focus on what matters most.
             </p>
         </section>
 
@@ -49,28 +72,32 @@
         <section id="services" class="content-card p-6 sm:p-8">
             <h2 class="text-2xl font-bold text-[#1b5e20] mb-3">Our Services</h2>
             <p class="text-gray-700 mb-4">
-                We do more than just standard cleaning—we provide customized assistance tailored specifically to your family's unique household routine.
+                We do more than just standard cleaning—we provide customized assistance tailored specifically to your family's unique routine.
             </p>
+            
             <div class="grid sm:grid-cols-3 gap-4 mt-6">
-                <div class="p-4 bg-[#f4f8f6] rounded-lg text-center border border-[#e0e0e0]">
-                    <div class="text-2xl mb-2">🧹</div>
+                <!-- Service Card 1 -->
+                <div class="p-5 bg-[#ffd1dc]/20 rounded-xl text-center border border-[#ffd1dc] hover:border-[#1b5e20]/40 transition-colors">
+                    <div class="text-3xl mb-2">🧹</div>
                     <h3 class="font-bold text-[#1b5e20] mb-1">Chores & Cleaning</h3>
                     <p class="text-xs text-gray-600">Deep cleaning and daily chore maintenance.</p>
                 </div>
-                <div class="p-4 bg-[#f4f8f6] rounded-lg text-center border border-[#e0e0e0]">
-                    <div class="text-2xl mb-2">📦</div>
+                <!-- Service Card 2 -->
+                <div class="p-5 bg-[#ffd1dc]/20 rounded-xl text-center border border-[#ffd1dc] hover:border-[#1b5e20]/40 transition-colors">
+                    <div class="text-3xl mb-2">📦</div>
                     <h3 class="font-bold text-[#1b5e20] mb-1">Organization</h3>
                     <p class="text-xs text-gray-600">Decluttering rooms, closets, and common areas.</p>
                 </div>
-                <div class="p-4 bg-[#f4f8f6] rounded-lg text-center border border-[#e0e0e0]">
-                    <div class="text-2xl mb-2">📋</div>
+                <!-- Service Card 3 -->
+                <div class="p-5 bg-[#ffd1dc]/20 rounded-xl text-center border border-[#ffd1dc] hover:border-[#1b5e20]/40 transition-colors">
+                    <div class="text-3xl mb-2">📋</div>
                     <h3 class="font-bold text-[#1b5e20] mb-1">Custom Tasks</h3>
                     <p class="text-xs text-gray-600">Tailored help for specific household requests.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Interactive Question / Survey Section (Moved below Our Services) -->
+        <!-- Interactive Survey Section -->
         <section id="survey-section" class="bg-[#e8f5e9] p-6 sm:p-8 rounded-2xl text-center shadow-sm border border-[#c8e6c9]">
             <h2 class="text-xl sm:text-2xl font-bold text-[#1b5e20] mb-2">
                 How often do you find yourself overwhelmed with household tasks?
@@ -85,15 +112,15 @@
                 <button class="survey-btn" type="button" onclick="selectSurveyOption(this)">Always</button>
             </div>
 
-            <!-- Submit Survey Answer Button -->
+            <!-- Submit Survey Button -->
             <div class="mt-6">
                 <button id="submit-survey-btn" type="button" onclick="submitSurveyAnswer()" class="btn-submit text-base opacity-50 cursor-not-allowed" disabled>
                     Submit Answer
                 </button>
             </div>
 
-            <!-- Feedback Message Box -->
-            <div id="survey-feedback" class="hidden mt-4 p-3 bg-white text-[#1b5e20] font-semibold rounded-lg shadow-inner max-w-md mx-auto border border-[#a5d6a7]">
+            <!-- Survey Feedback Message -->
+            <div id="survey-feedback" class="hidden mt-4 p-4 bg-white text-[#1b5e20] font-semibold rounded-lg shadow-sm max-w-md mx-auto border border-[#ffd1dc]">
                 Thanks for sharing! We can help take that burden off your shoulders.
             </div>
         </section>
@@ -104,6 +131,8 @@
             <p class="text-gray-600 mb-6 text-sm">Fill out the form below to request a personalized consultation.</p>
 
             <form id="booking-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+
                 <div>
                     <label for="name" class="block font-semibold text-gray-700 mb-1">Full Name</label>
                     <input type="text" id="name" name="name" required placeholder="Jane Doe" class="form-input">
@@ -119,14 +148,17 @@
                     <textarea id="service-type" name="service-type" rows="4" required placeholder="Describe the household tasks you need help with..." class="form-input"></textarea>
                 </div>
 
-                <button type="submit" class="btn-submit w-full sm:w-auto text-base">
+                <button type="submit" id="form-submit-btn" class="btn-submit w-full sm:w-auto text-base">
                     Submit Request
                 </button>
             </form>
 
-            <!-- Form Confirmation Box -->
+            <!-- Form Confirmation & Error Boxes -->
             <div id="form-success-msg" class="hidden mt-4 p-4 bg-[#e8f5e9] text-[#1b5e20] font-medium rounded-lg border border-[#a5d6a7]">
                 ✅ Your request has been submitted successfully! We will get back to you shortly.
+            </div>
+            <div id="form-error-msg" class="hidden mt-4 p-4 bg-red-50 text-red-700 font-medium rounded-lg border border-red-200">
+                ❌ Something went wrong. Please try again later.
             </div>
         </section>
 

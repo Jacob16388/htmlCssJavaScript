@@ -1,11 +1,12 @@
-/* Modern Design System Tokens & Base Styles */
+/* Design System Tokens & Base Styles */
 :root {
     --color-bg: #f9fdfa;
     --color-card-bg: #ffffff;
     --color-primary: #1b5e20;
     --color-primary-light: #2e7d32;
     --color-accent-bg: #e8f5e9;
-    --color-banner-bg: #f4f8f6;
+    --color-pink-accent: #ffd1dc; /* Soft pastel pink */
+    --color-banner-bg: #ffffff;
     --color-text-main: #2d3748;
 }
 
@@ -18,34 +19,72 @@ body {
     line-height: 1.6;
 }
 
-/* Responsive Header Banner & Scaled Logo */
-.header-banner {
+/* Header & Navigation Styling */
+header {
+    background-color: #ffffff;
+}
+
+.header-top-bar {
     width: 100%;
     background-color: var(--color-banner-bg);
-    padding: 24px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
 }
 
-.logo-img {
-    height: 240px; /* Increased desktop logo height for better visibility */
-    width: auto;
-    max-width: 90%;
-    object-fit: contain;
-    transition: height 0.3s ease;
+.brand-badge {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-color: #2e7d32;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #ffd1dc;
 }
 
-/* Navigation Button Style */
+/* Hero Section Image Background & Compact Badges */
+.hero-image-container {
+    width: 100%;
+    position: relative;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(27, 94, 32, 0.5) 100%), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 -6px 12px rgba(0,0,0,0.1);
+}
+
+.hero-glass-pill {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Compact Navigation Pill Container */
+.top-nav-container {
+    background-color: var(--color-accent-bg);
+    padding: 3px 4px;
+    border-radius: 9999px;
+    border: 1px solid #c8e6c9;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
 .nav-btn {
     color: var(--color-primary);
-    background-color: #ffffff;
-    padding: 8px 22px;
-    border: 1px solid var(--color-primary-light);
-    border-radius: 6px;
+    background-color: transparent;
+    padding: 6px 16px;
+    border: none;
+    border-radius: 9999px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
     display: inline-block;
@@ -54,14 +93,14 @@ body {
 .nav-btn:hover, .nav-btn.active {
     background-color: var(--color-primary-light);
     color: #ffffff;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(46, 125, 50, 0.25);
 }
 
-/* Unified Card Styles */
+/* Content Cards */
 .content-card {
     background: var(--color-card-bg);
     border-radius: 12px;
-    border-left: 5px solid var(--color-primary-light);
+    border-left: 6px solid var(--color-pink-accent);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -71,7 +110,7 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
-/* Interactive Survey Buttons */
+/* Survey Buttons */
 .survey-btn {
     background-color: #ffffff;
     color: var(--color-primary-light);
@@ -87,7 +126,8 @@ body {
 }
 
 .survey-btn:hover {
-    background-color: var(--color-accent-bg);
+    background-color: var(--color-pink-accent);
+    color: var(--color-primary);
 }
 
 .survey-btn.selected {
@@ -97,7 +137,7 @@ body {
     box-shadow: 0 2px 6px rgba(46, 125, 50, 0.3);
 }
 
-/* Consistent Form Inputs */
+/* Form Inputs & Buttons */
 .form-input {
     width: 100%;
     padding: 12px 16px;
@@ -110,10 +150,9 @@ body {
 
 .form-input:focus {
     border-color: var(--color-primary-light);
-    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 209, 220, 0.5);
 }
 
-/* Primary Submit Button */
 .btn-submit {
     background-color: var(--color-primary-light);
     color: #ffffff;
@@ -126,20 +165,12 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
 }
 
-.btn-submit:hover {
+.btn-submit:hover:not(:disabled) {
     background-color: var(--color-primary);
 }
 
-.btn-submit:active {
+.btn-submit:active:not(:disabled) {
     transform: scale(0.98);
-}
-
-/* Responsive Logo Scaling */
-@media (max-width: 640px) {
-    .logo-img {
-        height: 150px;
-    }
 }
