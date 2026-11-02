@@ -230,55 +230,43 @@ button[type="reset"]:hover {
 
 
         <label for="email">email</label>
-
+        <input type="email" name="email" id="email" placeholder="you@example.com" required>
 
         <label for="password">password</label>
-
+        <input type="password" id="password" name="password" placeholder="at least 8 characters" minlength="8" required> 
 
         <label for="tel">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="330-555-0100">`
 
+        <label for="number">age</label>
+        <input type="number" id="age" name="age" min="13" max="18">
 
-        <label id="number">age</label>
+        <label for="date">startDate</label>
+        <input type="date" id="startDate" name="startDate" required>
+    </fieldset>
 
+    <fieldset>
+        <legend>T-shirt Size</legend>
+        <label class="choice"><input type="radio" name="shirtSize" required>Small</label>
+        <label class="choice"><input type="radio" name="shirtSize">Medium</label>
+        <label class="choice"><input type="radio" name="shirtSize">Large</label>
+        <label class="choice"><input type="radio" name="shirtSize">X-Large</label>
+    </fieldset>
 
-        <label id="date">startDate</label>
+    <fieldset>
+        <legend>What do you want to learn?</legend>
+        <label class="choice"><input type="checkbox" name="topics">HTML (html and css)</label>
+        <label class="choice"><input type="checkbox" name="topics">JavaScript(javascript)</label>
+        <label class="choice"><input type="checkbox" name="topics">Python(python)</label>
+        <label class="choice"><input type="checkbox" name="topics">robots(robotics)</label>
+        <label class="choice"><input type="checkbox" name="topics">games(game Design)</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>contact and comments</legend>
+        <label id="contact"><input name="contact">Best way to reach you</label>
     </fieldset>
 </form>
-    <!-- TODO 2: Make a fieldset with the legend "Camper Information".
-         Inside it, add a label + input for each row below.
-         Every label's for must match its input's id.
-         Every input needs a name (use the same word as the id).
-
-         Label text       type       id / name    other attributes
-         -----------      --------   ----------   -------------------------------------
-         Full Name:       text       fullName     placeholder="First and last name" required
-         Email Address:   email      email        placeholder="you@example.com" required
-         Password:        password   password     placeholder="At least 8 characters" minlength="8" required
-         Phone:           tel        phone        placeholder="330-555-0100"
-         Age:             number     age          min="13" max="18"
-         Start Date:      date       startDate    required
-    -->
-    <!-- YOUR CODE HERE -->
-
-    <!-- TODO 3: Make a fieldset with the legend "T-Shirt Size".
-         Add 4 radio buttons. Put each <input> INSIDE its <label>,
-         and give each label class="choice".
-         - All 4 use name="shirtSize"
-         - Values and label text: small (Small), medium (Medium),
-           large (Large), xlarge (X-Large)
-         - Put required on the first radio button
-    -->
-    <!-- YOUR CODE HERE -->
-
-    <!-- TODO 4: Make a fieldset with the legend "What do you want to learn?".
-         Add 5 checkboxes. Put each <input> INSIDE its <label>,
-         and give each label class="choice".
-         - All 5 use name="topics"
-         - Values and label text: html (HTML and CSS), javascript (JavaScript),
-           python (Python), games (Game Design), robots (Robotics)
-    -->
-    <!-- YOUR CODE HERE -->
-
     <!-- TODO 5: Make a fieldset with the legend "Contact and Comments".
          a) A label "Best way to reach you:" and a select with id="contact" and name="contact".
             Options (value / text):
